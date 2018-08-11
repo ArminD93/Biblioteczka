@@ -39,9 +39,12 @@ def setStep(w1, w2, w3, w4):
   pi.write(coil_B_2_pin, w4)
 
 
-servo.SetAngle(30) 
+#servo.SetAngle(30)  #open
+#servo.SetAngle(30)  # close
 
-def  Gripper():
+
+def  Gripper_Forward():
+	
 	for i in range(0, steps):
 		setStep(0,1,1,0)
 		sleep(delay)
@@ -52,11 +55,7 @@ def  Gripper():
 		setStep(1,0,1,0)
 		sleep(delay)
 
-	sleep(1)#sekundy
-	servo.SetAngle(0) 	
-		
-
-	sleep(2)#sekundy
+def  Gripper_Reverse():
 
 	for i in range(0, steps):
 		setStep(1,0,1,0)
@@ -68,7 +67,7 @@ def  Gripper():
 		setStep(0,1,1,0)
 		sleep(delay)
 	
-	sleep(5)#sekundy
+	
 
 
 

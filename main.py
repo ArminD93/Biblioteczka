@@ -16,7 +16,11 @@ settings.stopPWM_LeftRight()
 settings.setPWM_UpDown()
 settings.Up()
 settings.stopPWM_UpDown() # PWM stop
-	
+
+sleep(2)
+gripper.Gripper_Forward()
+gripper. Gripper_Reverse()
+sleep(2)
 
 
 settings.setPWM_LeftRight()
@@ -28,7 +32,11 @@ settings.stopPWM_LeftRight()
 settings.setPWM_UpDown()
 settings.Down()
 settings.stopPWM_UpDown()      
-	
+
+sleep(2)	
+gripper.Gripper_Forward()
+gripper.Gripper_Reverse()
+sleep(2)
 
 	
 settings.pi.stop()

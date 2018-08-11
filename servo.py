@@ -13,21 +13,25 @@ GPIO.setup(servo, GPIO.OUT)
 
 pi = pigpio.pi()
 pwm = GPIO.PWM(servo, 50) # GPIO 12 for PWM with 50Hz
-pwm.start(0) # Initialization
+
 
 def SetAngle(angle):
-    duty = angle / 18 + 2
+	
+	pwm.start(0) # Initialization
+	duty = angle / 18 + 2
 
     
-    pi.write(servo,1)
+	pi.write(servo,1)
 
-    pwm.ChangeDutyCycle(duty)
+	pwm.ChangeDutyCycle(duty)
     
-    sleep(1)
+	sleep(1)
 
-    pi.write(servo,0)
+	pi.write(servo,0)
 
-    pwm.ChangeDutyCycle(duty)
+	pwm.ChangeDutyCycle(duty)
+	
+	
 	
 
 
