@@ -5,7 +5,7 @@ from time import sleep
 import pigpio
 GPIO.setwarnings(False)
 
-servo = 12
+servo = 17
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(servo, GPIO.OUT)

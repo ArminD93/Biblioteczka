@@ -8,18 +8,27 @@ import settings
 
 
 
-try:
-	#while True:
-		settings.setPWM()
-		settings.Up()
-		settings.stopPWM()
-		sleep(1)
-		settings.setPWM()
-		settings.Down()
+settings.setPWM_LeftRight()	
+settings.Right()
+settings.stopPWM_LeftRight()
 
-        
-except KeyboardInterrupt:
-    print ("\nCtrl-C pressed.  Stopping PIGPIO and exiting...")
-finally:
-    settings.stopPWM() # PWM stop
-    settings.pi.stop()
+
+settings.setPWM_UpDown()
+settings.Up()
+settings.stopPWM_UpDown() # PWM stop
+	
+
+
+settings.setPWM_LeftRight()
+settings.Left()
+settings.stopPWM_LeftRight()
+
+
+
+settings.setPWM_UpDown()
+settings.Down()
+settings.stopPWM_UpDown()      
+	
+
+	
+settings.pi.stop()
