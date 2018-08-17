@@ -14,8 +14,8 @@ STEP2 = 10 # Step GPIO Pin
 DIR3 = 22  # Direction GPIO Pin
 STEP3 = 23 # Step GPIO Pin
 
-step_count_UpDown= 50 #170
-step_count_LeftRight = 20
+#step_count_UpDown= 50 #170
+#step_count_LeftRight = 20
 
 # Połączenie się z pigpiod
 pi = pigpio.pi()
@@ -85,26 +85,26 @@ def stopPWM_LeftRight():
 	pi.set_PWM_dutycycle(STEP3, 0)
 
 
-def Up():
+def Up(step_count_UpDown):
     for x in range(step_count_UpDown):
         pi.write(DIR, 1)
         pi.write(DIR2, 1)
         sleep(.1)
 
 		
-def Down():		
+def Down(step_count_UpDown):		
     for x in range(step_count_UpDown):
         pi.write(DIR, 0)
         pi.write(DIR2, 0)
         sleep(.1)
 		
-def Right():
+def Right(step_count_LeftRight):
     for x in range(step_count_LeftRight):
         pi.write(DIR3, 1)
         sleep(.1)
 
 		
-def Left():		
+def Left(step_count_LeftRight):		
     for x in range(step_count_LeftRight):
         pi.write(DIR3, 0)
         sleep(.1)

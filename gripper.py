@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 import RPi.GPIO as GPIO
-import servo
+
 from time import sleep
 import pigpio
-# -*- coding: utf-8 -*-
+
 GPIO.setwarnings(False)
 
 
@@ -39,8 +39,7 @@ def setStep(w1, w2, w3, w4):
   pi.write(coil_B_2_pin, w4)
 
 
-#servo.SetAngle(30)  #open
-#servo.SetAngle(30)  # close
+
 
 
 def  Gripper_Forward():
