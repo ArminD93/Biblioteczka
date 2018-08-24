@@ -2,20 +2,20 @@
 # -*- coding: utf-8 -*- 
 from time import sleep
 import pigpio
-import gripper
+
 import settings
 
 
-
+step_count_UpDown = 69 #23
 
 try:
 	#while True:
 		settings.setPWM_UpDown()
-		settings.Up()
+		settings.Up(step_count_UpDown)
 		settings.stopPWM_UpDown()
 		sleep(1)
 		settings.setPWM_UpDown()
-		settings.Down()
+		settings.Down(step_count_UpDown)
 
         
 except KeyboardInterrupt:

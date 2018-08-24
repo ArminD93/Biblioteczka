@@ -5,22 +5,23 @@ import pigpio
 import gripper
 import settings
 
+step_count_LeftRight=20
 
 
 try:
 	#while True:
 		settings.setPWM_LeftRight()
 		
-		settings.Right()
+		settings.Right(step_count_LeftRight)
 		
 		settings.stopPWM_LeftRight()
 		sleep(1)
 		
-		gripper.Gripper()
+	
 		
 		settings.setPWM_LeftRight()
 		
-		settings.Left()
+		settings.Left(step_count_LeftRight)
 
         
 except KeyboardInterrupt:
