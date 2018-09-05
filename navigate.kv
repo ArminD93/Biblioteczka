@@ -1,0 +1,36 @@
+# File name: navigate.kv
+<ToolButton@ToggleButton>:
+    size_hint: None,None
+    size: 48,48
+    group: 'tool'
+
+<Navigate@GridLayout>:
+    cols: 3
+    spacing: 3
+    padding: [10, 10]
+    Label:
+        
+        text: ''
+    Button:
+        id: label4B
+        text: 'UP'
+    Label:
+        text: ''
+    Button:
+        id: label4D
+        text: 'LEFT'
+    ToggleButton:
+        id: label4C
+        text: '0'
+    Button:
+        id: label4D
+        text: 'RIGHT'
+    Label:
+        text: ''
+    Button:
+        id: label4C
+        text: 'DOWN'
+    Label:
+        text: ''
+
+    

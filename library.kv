@@ -1,0 +1,91 @@
+# File name: library.kv
+#: import library library
+<ToolButton@ToggleButton>:
+    size_hint: None,None
+    size: 100,100
+    group: 'tool'
+
+<Library@GridLayout>:
+    cols: 5
+    spacing: 3
+    padding: [5, 5]	
+    ToolButton:
+        id: label4A
+        text: '4A'
+		on_state: root.button4A(*args)
+		
+    ToolButton:
+        id: label4B
+        text: '4B'
+		on_state: root.button4B(*args)
+    ToolButton:
+        id: label4C
+        text: '4C'
+		on_state: root.button4C(*args)
+    ToolButton:
+        id: label4D
+        text: '4D'
+		on_state: root.button4D(*args)
+    ToolButton:
+        id: label4E
+        text: '4E'    
+		on_state: root.button4E(*args)
+    ToolButton:
+        id: label3A
+        text: '3A'
+		on_state: root.button3A(*args)
+    ToolButton:
+        id: label3B
+        text: '3B'
+		on_state: root.button3B(*args)
+    ToolButton:
+        id: label3C
+        text: '3C'
+		on_state: root.button3C(*args)
+    ToolButton:
+        id: label3D
+        text: '3D'
+		on_state: root.button3D(*args)
+    ToolButton:
+        id: label3E
+        text: '3E'
+		on_state: root.button3E(*args)
+    ToolButton:
+        id: label2A
+        text: '2A'
+		on_state: root.button2A(*args)
+    ToolButton:
+        id: label2B
+        text: '2B'
+		on_state: root.button2B(*args)
+    ToolButton:
+        id: label2C
+        text: '2C'
+		on_state: root.button2C(*args)
+    ToolButton:
+        id: label2D
+        text: '2D'
+		on_state: root.button2D(*args)  
+    ToolButton:
+        id: label2E
+        text: '2E'
+		on_state: root.button2E(*args)
+    Label:
+        id: label1A
+        text: ''
+    ToolButton:
+        id: label1B
+        text: '1B'
+		on_state: root.button1B(*args)		
+    ToolButton:
+        id: label1C
+        text: '1C'
+		on_state: root.button1C(*args)
+    ToolButton:
+        id: label1D
+        text: '1D'
+		on_state: root.button1D(*args)
+    ToolButton:
+        id: label1E
+        text: '1E'
+		on_state: root.button1E(*args)
