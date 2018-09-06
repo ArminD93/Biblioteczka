@@ -1,51 +1,93 @@
-# File name: statusbar.py
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
 import kivy
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import NumericProperty, ObjectProperty, ListProperty
 
+from time import sleep
+import dijkstra
 
+frm = '1A'
 
 
 class StatusBar(BoxLayout):
 
 	def label1B(self):
-			self.lbl.text  = "Wybrano 1B"					
+			to = '1B'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 1B: " + " ->".join(list)				
 	def label1C(self):
-            self.lbl.text  = "Wybrano 1C"
+			to = '1C'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 1C: " + " ->".join(list)
 	def label1D(self):
-			self.lbl.text  = "Wybrano 1D"
+			to = '1D'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 1D: " + " ->".join(list)
 	def label1E(self):
-		self.lbl.text  = "Wybrano 1E"
+			to = '1E'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 1E: " + " ->".join(list)
 # #############################################
 	def label2A(self):
-		self.lbl.text  = "Wybrano 2A"
+			to = '2A'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 2A: " + " ->".join(list)
 	def label2B(self):
-			self.lbl.text  = "Wybrano 2B"
+			to = '2B'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 2B: " + " ->".join(list)
 	def label2C(self):
-		self.lbl.text  = "Wybrano 2C"
+			to = '2C'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 2C: " + " ->".join(list)
 	def label2D(self):
-		self.lbl.text  = "Wybrano 2D"
+			to = '2D'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 2D: " + " ->".join(list)
 	def label2E(self):
-            self.lbl.text  = "Wybrano 2E"
+			to = '2E'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 2E: " + " ->".join(list)
 # #############################################
 	def label3A(self):
-            self.lbl.text  = "Wybrano 3A"
+			to = '3A'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 3A: " + " ->".join(list)
 	def label3B(self):
-            self.lbl.text  = "Wybrano 3B"
+			to = '3B'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 3B: " + " ->".join(list)
 	def label3C(self):
-            self.lbl.text  = "Wybrano 3C"
+			to = '3C'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 3C: " + " ->".join(list)
 	def label3D(self):
-            self.lbl.text  = "Wybrano 3D"
+			to = '3D'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 3D: " + " ->".join(list)
 	def label3E(self):
-            self.lbl.text  = "Wybrano 3E"
+			to = '3E'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 3E: " + " ->".join(list)
 # #############################################
 	def label4A(self):
-            self.lbl.text  = "Wybrano 4A"
+			to = '4A'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 4A: " + " ->".join(list)
 	def label4B(self):
-            self.lbl.text  = "Wybrano 4B"
+			to = '4B'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 4B: " + " ->".join(list)
 	def label4C(self):
-            self.lbl.text  = "Wybrano 4C"
+			to = '4C'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 4C: " + " ->".join(list)
 	def label4D(self):
-			self.lbl.text  = "Wybrano 4D"
+			to = '4D'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 4D: " + " ->".join(list)
 	def label4E(self):
-			self.lbl.text  = "Wybrano 4E"
+			to = '4E'
+			list = dijkstra.Dijkstra(frm, to)
+			self.lbl.text  = " Najkrótsza trasa do 4E: " + " ->".join(list)

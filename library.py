@@ -35,8 +35,6 @@ class Library(GridLayout):
 				to = '1B'
 				find_path(to)
 						
-		else:
-				print("Wylaczono")
 				
  	def button1C(self, instance, value):
 		if value == 'down':
