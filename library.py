@@ -16,6 +16,7 @@ import gripper
 
 frm = '1A'
 
+
 def find_path(to):
 	list = dijkstra.Dijkstra(frm, to)
 	direction.Check_Direction(list)
@@ -25,15 +26,18 @@ def find_path(to):
 	list = dijkstra.Dijkstra(to, frm)
 	direction.Check_Direction(list)		
 	
-	gripper.reverse()	
+	gripper.reverse()
+	print ( "liczba ruchow: " , len(list)-1)
+	
 
 class Library(GridLayout):	
 		
 	def button1B(self, instance, value):
 		if value == 'down':
-				self.status_bar.label1B()
+				
 				to = '1B'
 				find_path(to)
+				
 						
 				
  	def button1C(self, instance, value):

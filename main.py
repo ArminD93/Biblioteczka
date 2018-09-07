@@ -6,7 +6,7 @@ from kivy.lang import Builder
 from kivy.uix.anchorlayout import AnchorLayout
 
 
-Builder.load_file('navigate.kv')
+
 Builder.load_file('library.kv')
 Builder.load_file('statusbar.kv')
 
