@@ -9,194 +9,240 @@ from kivy.uix.togglebutton import ToggleButton
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import NumericProperty, ObjectProperty
 
+
+
 from time import sleep
 import dijkstra
 import direction
 import gripper
 
-frm = '1A'
-
-
-def find_path(to):
-	list = dijkstra.Dijkstra(frm, to)
-	direction.Check_Direction(list)
-			
-	gripper.forward()
-			
-	list = dijkstra.Dijkstra(to, frm)
-	direction.Check_Direction(list)		
-	
-	gripper.reverse()
-	print ( "liczba ruchow: " , len(list)-1)
-	
+		
 
 class Library(GridLayout):	
-		
-	def button1B(self, instance, value):
-		if value == 'down':
-				
-				to = '1B'
-				find_path(to)
-				
-						
-				
- 	def button1C(self, instance, value):
-		if value == 'down':
-				print("1C")
-				self.status_bar.label1C()
-				to = '1C'
-				find_path(to)				
-		else:
-				print("Wylaczono")
-				
-	def button1D(self, instance, value):
-		if value == 'down':
-				print("1D")
-				self.status_bar.label1D()
-				to = '1D'
-				find_path(to)				
-		else:
-				print("Wylaczono")				
-	def button1E(self, instance, value):
-		if value == 'down':
-				print("1E")
-				self.status_bar.label1E()
-				to = '1E'
-				find_path(to)				
-		else:
-				print("Wylaczono")
+
+	global FLG_2A
+	global FLG_3A
+	global FLG_4A	
+	
+	global FLG_1B
+	global FLG_2B
+	global FLG_3B
+	global FLG_4B	
+	
+	global FLG_1C
+	global FLG_2C
+	global FLG_3C
+	global FLG_4C
+
+	global FLG_1D
+	global FLG_2D
+	global FLG_3D
+	global FLG_4D
+	
+	global FLG_1E
+	global FLG_2E
+	global FLG_3E
+	global FLG_4E	
+
+	FLG_2A = False
+	FLG_3A = False
+	FLG_4A = False
+	
+	FLG_1B = False
+	FLG_2B = False
+	FLG_3B = False
+	FLG_4B = False
+	
+	FLG_1C = False
+	FLG_2C = False
+	FLG_3C = False
+	FLG_4C = False
+			
+	FLG_1D = False
+	FLG_2D = False
+	FLG_3D = False
+	FLG_4D = False
+	
+	FLG_1E = False
+	FLG_2E = False
+	FLG_3E = False
+	FLG_4E = False
+	
+	def button1B(self, event, val1):
+
+		if val1 == 'down':
+			global FLG_1B
+			global toB
+			FLG_1B = True
+			toB = '1B'
+			print ("Ustawiono flagę 1B")											
+	
+ 	def button1C(self, event, val):
+
+		if val == 'down':
+			global FLG_1C
+			global toC
+			FLG_1C = True
+			toC = '1C'
+			print ("Ustawiono flagę 1C")			
+					
+	def button1D(self, instance, val):
+
+		if val == 'down':
+			global FLG_1D
+			global toD
+			FLG_1D = True
+			toD = '1D'
+			print ("Ustawiono flagę 1D")			
+								
+	def button1E(self, instance, val):
+
+		if val == 'down':
+			global FLG_1E
+			global toE
+			FLG_1E = True
+			toE = '1E'
+			print ("Ustawiono flagę 1E")	
 				
 # ###################################################
-	def button2A(self, instance, value):
-		if value == 'down':
-				print("2A")
-				self.status_bar.label2A()
-				to = '2A'
-				find_path(to)				
-		else:
-				print("Wylaczono")
+	def button2A(self, instance, val):
+
+		if val == 'down':
+			global FLG_2A
+			global toA
+			FLG_2A = True
+			toA = '2A'
+			print ("Ustawiono flagę 2A")					
+
 				
- 	def button2B(self, instance, value):
-		if value == 'down':
-				print("2B")
-				self.status_bar.label2B()
-				to = '2B'
-				find_path(to)				
-		else:
-				print("Wylaczono")
+ 	def button2B(self, instance, val):
+
+		if val == 'down':
+			global FLG_2B
+			global toB
+			FLG_2B = True
+			toB = '2B'
+			print ("Ustawiono flagę 2B")						
 				
-	def button2C(self, instance, value):
-		if value == 'down':
-				print("2C")
-				self.status_bar.label2C()
-				to = '2C'
-				find_path(to)				
-		else:
-				print("Wylaczono")				
-	def button2D(self, instance, value):
-		if value == 'down':
-				print("2D")
-				self.status_bar.label2D()
-				to = '2D'
-				find_path(to)				
-		else:
-				print("Wylaczono")
+	def button2C(self, instance, val):
+
+		if val == 'down':
+			global FLG_2C
+			global toC
+			FLG_2C = True
+			toC = '2C'
+			print ("Ustawiono flagę 2C")		
+
 				
-	def button2E(self, instance, value):
-		if value == 'down':
-				print("2E")
-				self.status_bar.label2E()
-				to = '2E'
-				find_path(to)				
-		else:
-				print("Wylaczono")	
+	def button2D(self, instance, val):
+
+		if val == 'down':
+			global FLG_2D
+			global toD
+			FLG_2D = True
+			toD = '2D'
+			print ("Ustawiono flagę 2D")	
+				
+	def button2E(self, instance, val):
+
+		if val == 'down':
+			global FLG_2E
+			global toE
+			FLG_2E = True
+			toE = '2E'
+			print ("Ustawiono flagę 2E")		
 # ############################################
-	def button3A(self, instance, value):
-		if value == 'down':
-				print("3A")
-				self.status_bar.label3A()
-				to = '3A'
-				find_path(to)				
-		else:
-				print("Wylaczono")
+	def button3A(self, instance, val):
+
+		if val == 'down':
+			global FLG_3A
+			global toA
+			FLG_3A = True
+			toA = '3A'
+			print ("Ustawiono flagę 3A")	
 				
- 	def button3B(self, instance, value):
-		if value == 'down':
-				print("3B")
-				self.status_bar.label3B()
-				to = '3B'
-				find_path(to)				
-		else:
-				print("Wylaczono")
+ 	def button3B(self, instance, val):
+
+		if val == 'down':
+			global FLG_3B
+			global toB
+			FLG_3B = True
+			toB = '3B'
+			print ("Ustawiono flagę 3B")	
 				
-	def button3C(self, instance, value):
-		if value == 'down':
-				print("3C")
-				self.status_bar.label3C()
-				to = '3C'
-				find_path(to)				
-		else:
-				print("Wylaczono")				
-	def button3D(self, instance, value):
-		if value == 'down':
-				print("3D")
-				self.status_bar.label3D()
-				to = '3D'
-				find_path(to)				
-		else:
-				print("Wylaczono")
+	def button3C(self, instance, val):
+	
+		if val == 'down':
+			global FLG_3C
+			global toC
+			FLG_3C = True
+			toC = '3C'
+			print ("Ustawiono flagę 3C")			
+			return FLG_3C	
+			
+	def button3D(self, instance, val):
+
+		if val == 'down':
+			global FLG_3D
+			global toD
+			FLG_3D = True
+			toD = '3D'
+			print ("Ustawiono flagę 3D")	
 				
-	def button3E(self, instance, value):
-		if value == 'down':
-				print("3E")
-				self.status_bar.label3E()
-				to = '3E'
-				find_path(to)				
-		else:
-				print("Wylaczono")	
+	def button3E(self, instance, val):
+
+		if val == 'down':
+			global FLG_3E
+			global toE
+			FLG_3E = True
+			toE = '3E'
+			print ("Ustawiono flagę 3E")	
 # #############################################
-	def button4A(self, instance, value):
-		if value == 'down':
-				print("4A")
-				self.status_bar.label4A()
-				to = '4A'
-				find_path(to)				
+	def button4A(self, instance, val):
+
+		if val == 'down':
+			global FLG_4A
+			global toA
+			FLG_4A = True
+			toA = '4A'
+			print ("Ustawiono flagę 4A")	
+			
+ 	def button4B(self, instance, val):
+
+		if val == 'down':
+			global FLG_4B
+			global toB
+			FLG_4B = True
+			toB= '4B'
+			print ("Ustawiono flagę 4B")			
 				
-		else:
-				print("Wylaczono")
+	def button4C(self, instance, val):
+	
+		if val == 'down':
+			global FLG_4C
+			global toC
+			FLG_4C = True
+			toC = '4C'
+			print ("Ustawiono flagę 4C")				
+			
+	def button4D(self, instance, val):
+
+		if val == 'down':
+			global FLG_4D
+			global toD
+			FLG_4D = True
+			toA = '4D'
+			print ("Ustawiono flagę 4D")
 				
- 	def button4B(self, instance, value):
-		if value == 'down':
-				print("4B")
-				self.status_bar.label4B()
-				to = '4B'
-				find_path(to)			
-		else:
-				print("Wylaczono")
+	def button4E(self, instance, val):
+
+		if val == 'down':
+			global FLG_4E
+			global toE
+			FLG_4E = True
+			toE = '4E'
+			print ("Ustawiono flagę 4E")					
 				
-	def button4C(self, instance, value):
-		if value == 'down':
-				print("4C")
-				self.status_bar.label4C()
-				to = '4C'
-				find_path(to)				
-		else:
-				print("Wylaczono")				
-	def button4D(self, instance, value):
-		if value == 'down':
-				print("4D")
-				self.status_bar.label4D()
-				to = '4D'
-				find_path(to)			
-		else:
-				print("Wylaczono")
-				
-	def button4E(self, instance, value):
-		if value == 'down':
-				print("4E")
-				self.status_bar.label4E()
-				to = '4E'
-				find_path(to)				
-		else:
-				print("Wylaczono")	
 # #######################
+
+

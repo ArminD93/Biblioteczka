@@ -1,0 +1,17 @@
+# File name: start.kv
+
+#: import start_button start_button
+<StartButton@Button>:
+    size_hint: None,None
+    size: 100,50
+    group: 'tool'
+
+<START@GridLayout>:
+    cols: 5
+    spacing: 3
+    padding: [5, 5]	
+
+    StartButton:
+        id: start_button
+        text: 'START'
+		on_press: root.buttonStart(*args)

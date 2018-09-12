@@ -8,6 +8,7 @@ from kivy.uix.anchorlayout import AnchorLayout
 
 
 Builder.load_file('library.kv')
+Builder.load_file('start_button.kv')
 Builder.load_file('statusbar.kv')
 
 

@@ -183,7 +183,7 @@ def Dijkstra(frm, to):
         shortest(target, path)
     
         print 'The shortest path : %s ' %(path[::-1])
-        print(" ")
+       
         
         global listA
          
