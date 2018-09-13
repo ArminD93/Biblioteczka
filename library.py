@@ -67,47 +67,12 @@ class Library(GridLayout):
 	FLG_2E = False
 	FLG_3E = False
 	FLG_4E = False
-	
-	def button1B(self, event, val1):
-
-		if val1 == 'down':
-			global FLG_1B
-			global toB
-			FLG_1B = True
-			toB = '1B'
-			print ("Ustawiono flagę 1B")											
-	
- 	def button1C(self, event, val):
-
-		if val == 'down':
-			global FLG_1C
-			global toC
-			FLG_1C = True
-			toC = '1C'
-			print ("Ustawiono flagę 1C")			
 					
-	def button1D(self, instance, val):
-
-		if val == 'down':
-			global FLG_1D
-			global toD
-			FLG_1D = True
-			toD = '1D'
-			print ("Ustawiono flagę 1D")			
-								
-	def button1E(self, instance, val):
-
-		if val == 'down':
-			global FLG_1E
-			global toE
-			FLG_1E = True
-			toE = '1E'
-			print ("Ustawiono flagę 1E")	
-				
 # ###################################################
 	def button2A(self, instance, val):
 
 		if val == 'down':
+			self.status_bar3.label2A()		
 			global FLG_2A
 			global toA
 			FLG_2A = True
@@ -118,6 +83,7 @@ class Library(GridLayout):
  	def button2B(self, instance, val):
 
 		if val == 'down':
+			self.status_bar3.label2B()			
 			global FLG_2B
 			global toB
 			FLG_2B = True
@@ -127,6 +93,7 @@ class Library(GridLayout):
 	def button2C(self, instance, val):
 
 		if val == 'down':
+			self.status_bar3.label2C()			
 			global FLG_2C
 			global toC
 			FLG_2C = True
@@ -137,6 +104,7 @@ class Library(GridLayout):
 	def button2D(self, instance, val):
 
 		if val == 'down':
+			self.status_bar3.label2D()			
 			global FLG_2D
 			global toD
 			FLG_2D = True
@@ -146,6 +114,7 @@ class Library(GridLayout):
 	def button2E(self, instance, val):
 
 		if val == 'down':
+			self.status_bar3.label2E()			
 			global FLG_2E
 			global toE
 			FLG_2E = True
@@ -155,6 +124,7 @@ class Library(GridLayout):
 	def button3A(self, instance, val):
 
 		if val == 'down':
+			self.status_bar2.label3A()			
 			global FLG_3A
 			global toA
 			FLG_3A = True
@@ -164,6 +134,7 @@ class Library(GridLayout):
  	def button3B(self, instance, val):
 
 		if val == 'down':
+			self.status_bar2.label3B()
 			global FLG_3B
 			global toB
 			FLG_3B = True
@@ -173,6 +144,7 @@ class Library(GridLayout):
 	def button3C(self, instance, val):
 	
 		if val == 'down':
+			self.status_bar2.label3C()			
 			global FLG_3C
 			global toC
 			FLG_3C = True
@@ -183,6 +155,7 @@ class Library(GridLayout):
 	def button3D(self, instance, val):
 
 		if val == 'down':
+			self.status_bar2.label3D()			
 			global FLG_3D
 			global toD
 			FLG_3D = True
@@ -192,6 +165,7 @@ class Library(GridLayout):
 	def button3E(self, instance, val):
 
 		if val == 'down':
+			self.status_bar2.label3E()			
 			global FLG_3E
 			global toE
 			FLG_3E = True
@@ -201,6 +175,7 @@ class Library(GridLayout):
 	def button4A(self, instance, val):
 
 		if val == 'down':
+			self.status_bar1.label4A()			
 			global FLG_4A
 			global toA
 			FLG_4A = True
@@ -210,6 +185,7 @@ class Library(GridLayout):
  	def button4B(self, instance, val):
 
 		if val == 'down':
+			self.status_bar1.label4B()		
 			global FLG_4B
 			global toB
 			FLG_4B = True
@@ -219,6 +195,7 @@ class Library(GridLayout):
 	def button4C(self, instance, val):
 	
 		if val == 'down':
+			self.status_bar1.label4C()		
 			global FLG_4C
 			global toC
 			FLG_4C = True
@@ -228,6 +205,7 @@ class Library(GridLayout):
 	def button4D(self, instance, val):
 
 		if val == 'down':
+			self.status_bar1.label4D()		
 			global FLG_4D
 			global toD
 			FLG_4D = True
@@ -237,6 +215,7 @@ class Library(GridLayout):
 	def button4E(self, instance, val):
 
 		if val == 'down':
+			self.status_bar1.label4E()		
 			global FLG_4E
 			global toE
 			FLG_4E = True

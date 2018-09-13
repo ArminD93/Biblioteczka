@@ -24,11 +24,14 @@ def find_path(frm, to):
 	
 	
 	list = dijkstra.Dijkstra(frm, to)
+	list2 = dijkstra.Dijkstra(to, frm)
 	
 	#print ( "liczba ruchow: " , len(list)-1)
-	DS += len(list)-1
-
+	DS += (len(list)-1 )+ (len(list2)-1)
+	
 	print ("Droga: ", DS )
+	
+	
 	
 	
 def Flg_False():
@@ -62,34 +65,23 @@ def Cell_target(target):
 			DS = 0
 			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == True:
 			
-				find_path(target, library.toA)	
-				to = target
-				find_path(library.toA, to)				
+				find_path(target, library.toA)									
 				
 			if any([library.FLG_2B, library.FLG_3B, library.FLG_4B]) == True:
 			
-				find_path(target, library.toB)	
-				to = target
-				find_path(library.toB, to)										
-						
+				find_path(target, library.toB)																			
 				
 			if any([library.FLG_2C, library.FLG_3C, library.FLG_4C]) == True:
 				
-				find_path(target, library.toC)	
-				to = target
-				find_path(library.toC, to)									
+				find_path(target, library.toC)													
 						
 			if any([library.FLG_2D, library.FLG_3D, library.FLG_4D]) == True:
 			
-				find_path(target, library.toD)	
-				to = target
-				find_path(library.toD, to)								
+				find_path(target, library.toD)											
 					
 			if any([library.FLG_2E, library.FLG_3E, library.FLG_4E]) == True:
 				
 				find_path(target, library.toE)	
-				to = target
-				find_path(library.toE, to)
 				
 			print("")
 			print("Droga do" ,target, ": " ,DS)
