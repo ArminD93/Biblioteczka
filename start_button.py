@@ -111,8 +111,9 @@ class START(GridLayout):
 				DSs.append(DS)			
 					
 			Flg_False()
-			
-
+			DSmin = min(DSs)
+			DSindex = DSs.index(min(DSs))
+			Cell = targets[DSindex]
 			
 			
 			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == False:
@@ -122,8 +123,12 @@ class START(GridLayout):
 							if any([library.FLG_2E, library.FLG_3E, library.FLG_4E]) == False:
 								print("")
 								print('Wybierz pole od 1B do 4E')
-			
-								print ("Calkowita droga: ", DSs )
+								print("")
+								print ("Dostepne cele: ", targets )
+								print ("Calkowite drogi do kazdego z celow: ", DSs )
+								print ("Najkrotsza droga: ", DSmin )
+								print ("Pozycja na liscie: ", DSindex )
+								print ("Najkrotsza droga jest do komorki: ", Cell )
 								print("")
 	
 
