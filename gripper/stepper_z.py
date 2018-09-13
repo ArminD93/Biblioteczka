@@ -41,7 +41,6 @@ def setStep(w1, w2, w3, w4):
 
 
 
-
 def  Gripper_Forward():
 	
 	for i in range(0, steps):
@@ -67,8 +66,6 @@ def  Gripper_Reverse():
 		sleep(delay)
 	
 	
-
-
 
 	
 

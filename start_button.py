@@ -12,19 +12,35 @@ import library
 from time import sleep
 import dijkstra
 import direction
-import gripper
-
+import gripper_file
 
 
 DS = 0
 
+gripper = gripper_file.Gripper() 
 
-def find_path(frm, to):
+def find_path(frm, to, FLG=False):
 	global DS
 	
-	
 	list = dijkstra.Dijkstra(frm, to)
+	if FLG == True:
+		direction.Check_Direction(list)	
+		gripper.open() # open
+		sleep(2)
+		gripper.Gripper_Forward()
+		gripper.close() # close
+		gripper.Gripper_Reverse()
+		sleep(2)		
+		
 	list2 = dijkstra.Dijkstra(to, frm)
+	if FLG == True:
+		direction.Check_Direction(list2)
+		sleep(2)			
+		gripper.Gripper_Forward()
+		gripper.open() # open
+		gripper.Gripper_Reverse()	
+		sleep(2)			
+		gripper.close() # close
 	
 	#print ( "liczba ruchow: " , len(list)-1)
 	DS += (len(list)-1 )+ (len(list2)-1)
@@ -102,12 +118,18 @@ class START(GridLayout):
 				
 				DSs.append(DS)			
 					
-			Flg_False()
+			
 			DSmin = min(DSs)
 			DSindex = DSs.index(min(DSs))
 			Cell = targets[DSindex]
 			
-			
+			if Cell in targets:
+				print("")
+				print (Cell, "Jest na liscie")
+				Cell_target(Cell)	
+				
+			Flg_False()
+
 			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == False:
 				if any([library.FLG_2B, library.FLG_3B, library.FLG_4B]) == False:
 					if any([library.FLG_2C, library.FLG_3C, library.FLG_4C]) == False:
