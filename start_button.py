@@ -16,18 +16,18 @@ import gripper
 
 
 
-frm = '1A'
 DS = 0
+
 
 def find_path(frm, to):
 	global DS
 	
-	print("")
+	
 	list = dijkstra.Dijkstra(frm, to)
 	
-	print ( "liczba ruchow: " , len(list)-1)
+	#print ( "liczba ruchow: " , len(list)-1)
 	DS += len(list)-1
-	print("")
+
 	print ("Droga: ", DS )
 	
 	
@@ -40,77 +40,91 @@ def Flg_False():
 	library.FLG_3A = False
 	library.FLG_4A = False
 	
-	library.FLG_1B = False
 	library.FLG_2B = False
 	library.FLG_3B = False
 	library.FLG_4B = False
 	
-	library.FLG_1C = False
 	library.FLG_2C = False
 	library.FLG_3C = False
 	library.FLG_4C = False
 	
-	library.FLG_1D = False
 	library.FLG_2D = False
 	library.FLG_3D = False
 	library.FLG_4D = False
 	
-	library.FLG_1E = False
 	library.FLG_2E= False
 	library.FLG_3E = False
 	library.FLG_4E = False
 	
 
-			
-
-class START(GridLayout):	
-
-	
-	def buttonStart(self, event):
-
+def Cell_target(target):
+			global DS
+			DS = 0
 			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == True:
 			
-				find_path(frm, library.toA)	
-				to = '1A'
+				find_path(target, library.toA)	
+				to = target
 				find_path(library.toA, to)				
 				
-			if any([library.FLG_1B, library.FLG_2B, library.FLG_3B, library.FLG_4B]) == True:
+			if any([library.FLG_2B, library.FLG_3B, library.FLG_4B]) == True:
 			
-				find_path(frm, library.toB)	
-				to = '1A'
+				find_path(target, library.toB)	
+				to = target
 				find_path(library.toB, to)										
 						
 				
-			if any([library.FLG_1C, library.FLG_2C, library.FLG_3C, library.FLG_4C]) == True:
+			if any([library.FLG_2C, library.FLG_3C, library.FLG_4C]) == True:
 				
-				find_path(frm, library.toC)	
-				to = '1A'
+				find_path(target, library.toC)	
+				to = target
 				find_path(library.toC, to)									
 						
-			if any([library.FLG_1D, library.FLG_2D, library.FLG_3D, library.FLG_4D]) == True:
+			if any([library.FLG_2D, library.FLG_3D, library.FLG_4D]) == True:
 			
-				find_path(frm, library.toD)	
-				to = '1A'
+				find_path(target, library.toD)	
+				to = target
 				find_path(library.toD, to)								
 					
-			if any([library.FLG_1E, library.FLG_2E, library.FLG_3E, library.FLG_4E]) == True:
+			if any([library.FLG_2E, library.FLG_3E, library.FLG_4E]) == True:
 				
-				find_path(frm, library.toE)	
-				to = '1A'
+				find_path(target, library.toE)	
+				to = target
 				find_path(library.toE, to)
-								
-								
-			Flg_False()							
 				
-														
-
-				
-			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == False:
-				print("")
-				print('Wybierz pole od 1B do 4E')
+			print("")
+			print("Droga do" ,target, ": " ,DS)
 			
-				print ("Calkowita droga: ", DS )
-				print("")
+			return DS
+
+			
+class START(GridLayout):	
+	
+	
+	def buttonStart(self, event):
+			
+			DSs = []
+			targets = ['1A', '1B', '1C', '1D', '1E']
+			for item in targets:		
+				target = item
+				Cell_target(target)		
+				
+				DSs.append(DS)			
+					
+			Flg_False()
+			
+
+			
+			
+			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == False:
+				if any([library.FLG_2B, library.FLG_3B, library.FLG_4B]) == False:
+					if any([library.FLG_2C, library.FLG_3C, library.FLG_4C]) == False:
+						if any([library.FLG_2D, library.FLG_3D, library.FLG_4D]) == False:
+							if any([library.FLG_2E, library.FLG_3E, library.FLG_4E]) == False:
+								print("")
+								print('Wybierz pole od 1B do 4E')
+			
+								print ("Calkowita droga: ", DSs )
+								print("")
 	
 
 
