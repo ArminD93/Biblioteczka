@@ -17,8 +17,10 @@ class StatusBar1(AnchorLayout):
 	def label4D(self):
 			self.lbl.text  =" Wybrano 4D"
 	def label4E(self):
-			self.lbl.text  =" Wybrano 4E"
-
+			self.lbl.text  =" Wybrano 4E"		
+	def label_delete1(self):
+			self.lbl.text  =" "
+			
 class StatusBar2(AnchorLayout):
 
 	def label3A(self):
@@ -31,7 +33,9 @@ class StatusBar2(AnchorLayout):
 			self.lbl2.text  =" Wybrano 3D"
 	def label3E(self):
 			self.lbl2.text  =" Wybrano 3E"
-		
+	def label_delete2(self):
+			self.lbl2.text  =" "
+			
 class StatusBar3(AnchorLayout):
 
 	def label2A(self):
@@ -44,3 +48,5 @@ class StatusBar3(AnchorLayout):
 			self.lbl3.text  =" Wybrano 2D"
 	def label2E(self):
 			self.lbl3.text  =" Wybrano 2E"
+	def label_delete3(self):
+			self.lbl3.text  =" "

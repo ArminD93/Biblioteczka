@@ -18,14 +18,18 @@ import gripper_file
 DS = 0
 
 
-
 def find_path(frm, to, FLG=False):
 	global DS
-		
+	global zero_pos
+	
 	if FLG == True:
-		list = dijkstra.Dijkstra(frm, to)
+		
+		list = dijkstra.Dijkstra(zero_pos, to)
 		direction.Check_Direction(list)
-		gripper_file.Gripper_take()		
+		gripper_file.Gripper_take()	
+		
+		zero_pos = frm
+		
 		
 		list = dijkstra.Dijkstra(to, frm)
 		direction.Check_Direction(list)
@@ -39,9 +43,7 @@ def find_path(frm, to, FLG=False):
 	DS += (len(list)-1 ) *2
 	
 	print ("Droga: ", DS )
-	
-	
-	
+		
 	
 def Flg_False():
 	
@@ -71,15 +73,17 @@ def Flg_False():
 
 def Cell_target(target, FLG=False):
 			global DS
+			global zero_pos			
 			DS = 0
+			zero_pos = '1A'
+			print (zero_pos)				
 			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == True:
 			
 				find_path(target, library.toA, FLG)									
 				
 			if any([library.FLG_2B, library.FLG_3B, library.FLG_4B]) == True:
 			
-				find_path(target, library.toB, FLG)																			
-				
+				find_path(target, library.toB, FLG)																							
 			if any([library.FLG_2C, library.FLG_3C, library.FLG_4C]) == True:
 				
 				find_path(target, library.toC, FLG)													
@@ -119,9 +123,25 @@ class START(GridLayout):
 			if Cell in targets:
 				print("")
 				print (Cell, "Jest na liscie")
+			
 				FLG = True
+				
+				#list = dijkstra.Dijkstra(zero_position, Cell)
+				#direction.Check_Direction(list)
+				
 				Cell_target(Cell, FLG)	
 				
+				zero_pos = '1A'
+				list = dijkstra.Dijkstra(Cell, zero_pos)
+				print (zero_pos)
+				direction.Check_Direction(list)
+				
+					
+				
+				
+				self.status_bar1.label_delete1()
+				self.status_bar2.label_delete2()
+				self.status_bar3.label_delete3()
 			Flg_False()
 
 			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == False:
