@@ -17,33 +17,26 @@ import gripper_file
 
 DS = 0
 
-gripper = gripper_file.Gripper() 
+
 
 def find_path(frm, to, FLG=False):
 	global DS
-	
-	list = dijkstra.Dijkstra(frm, to)
-	if FLG == True:
-		direction.Check_Direction(list)	
-		gripper.open() # open
-		sleep(2)
-		gripper.Gripper_Forward()
-		gripper.close() # close
-		gripper.Gripper_Reverse()
-		sleep(2)		
 		
-	list2 = dijkstra.Dijkstra(to, frm)
 	if FLG == True:
-		direction.Check_Direction(list2)
-		sleep(2)			
-		gripper.Gripper_Forward()
-		gripper.open() # open
-		gripper.Gripper_Reverse()	
-		sleep(2)			
-		gripper.close() # close
+		list = dijkstra.Dijkstra(frm, to)
+		direction.Check_Direction(list)
+		gripper_file.Gripper_take()		
+		
+		list = dijkstra.Dijkstra(to, frm)
+		direction.Check_Direction(list)
+		gripper_file.Gripper_give()
+		
+	else:
+		list = dijkstra.Dijkstra(frm, to)
+		list = dijkstra.Dijkstra(to, frm)		
 	
 	#print ( "liczba ruchow: " , len(list)-1)
-	DS += (len(list)-1 )+ (len(list2)-1)
+	DS += (len(list)-1 ) *2
 	
 	print ("Droga: ", DS )
 	
@@ -76,28 +69,28 @@ def Flg_False():
 	library.FLG_4E = False
 	
 
-def Cell_target(target):
+def Cell_target(target, FLG=False):
 			global DS
 			DS = 0
 			if any([library.FLG_2A, library.FLG_3A, library.FLG_4A]) == True:
 			
-				find_path(target, library.toA)									
+				find_path(target, library.toA, FLG)									
 				
 			if any([library.FLG_2B, library.FLG_3B, library.FLG_4B]) == True:
 			
-				find_path(target, library.toB)																			
+				find_path(target, library.toB, FLG)																			
 				
 			if any([library.FLG_2C, library.FLG_3C, library.FLG_4C]) == True:
 				
-				find_path(target, library.toC)													
+				find_path(target, library.toC, FLG)													
 						
 			if any([library.FLG_2D, library.FLG_3D, library.FLG_4D]) == True:
 			
-				find_path(target, library.toD)											
+				find_path(target, library.toD, FLG)											
 					
 			if any([library.FLG_2E, library.FLG_3E, library.FLG_4E]) == True:
 				
-				find_path(target, library.toE)	
+				find_path(target, library.toE, FLG)	
 				
 			print("")
 			print("Droga do" ,target, ": " ,DS)
@@ -126,7 +119,8 @@ class START(GridLayout):
 			if Cell in targets:
 				print("")
 				print (Cell, "Jest na liscie")
-				Cell_target(Cell)	
+				FLG = True
+				Cell_target(Cell, FLG)	
 				
 			Flg_False()
 
