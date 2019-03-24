@@ -5,7 +5,6 @@ import heapq
 import settings
 
 
-
 class Vertex:
     def __init__(self, node):
         self.id = node
@@ -19,8 +18,6 @@ class Vertex:
 
     def add_neighbor(self, neighbor, weight=0):
         self.adjacent[neighbor] = weight
-
-
 
     def get_id(self):
         return self.id
@@ -39,8 +36,6 @@ class Vertex:
 
     def set_visited(self):
         self.visited = True
-
-
 
 class Graph:
     def __init__(self):
@@ -69,11 +64,7 @@ class Graph:
             self.add_vertex(to)
 
         self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
-        self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
-    
- 
-
-        
+        self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)     
 
     def get_vertices(self):
         return self.vert_dict.keys()
