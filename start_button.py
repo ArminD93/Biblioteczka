@@ -24,12 +24,11 @@ def find_path(frm, to, FLG=False):
 	global DS
 	global zero_pos
 	
-	if FLG == True:
-		
+	if FLG == True:		
 		list = dijkstra.Dijkstra(zero_pos, to)
 		direction.Check_Direction(list)
+		
 		print("Sprawdzenie, czy obiekt jest na miejscu")
-		#print(to[1])
 		import QRscanner
 		QRscanner.set_camera()
 		QRscanner.ReadQR()
@@ -39,14 +38,8 @@ def find_path(frm, to, FLG=False):
 		QRscanner.cv2.destroyAllWindows()
 		print(to[1] , '----->', QRscanner.data )   
 		
-		if QRscanner.data == to[1]:
-
-			#QRscanner.cap.release()
-			#QRscanner.cv2.destroyAllWindows()
-			#QRscanner.data = 0			
+		if QRscanner.data == to[1]:		
 			gripper_file.Gripper_take()	
-		
-			#print('wynik:',QRscanner.data)
 			zero_pos = frm			
 			list = dijkstra.Dijkstra(to, frm)
 			direction.Check_Direction(list)
@@ -56,8 +49,9 @@ def find_path(frm, to, FLG=False):
 			print('Wyłączenie kamerki')
 			QRscanner.cap.release()
 			QRscanner.cv2.destroyAllWindows()			
-		
-		
+			#zero_pos = frm			
+			list = dijkstra.Dijkstra(to, frm)
+			direction.Check_Direction(list)				
 	else:
 		list = dijkstra.Dijkstra(frm, to)
 		list = dijkstra.Dijkstra(to, frm)		

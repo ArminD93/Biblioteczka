@@ -7,6 +7,7 @@ import cv2
 import time
 
 
+	
 def set_camera():
 	global cap
 	# Przechwycenie obrazu z kamerki
@@ -54,13 +55,18 @@ def ReadQR():
 	global points
 	global frame
 	global data
+	
 	data =0
+	i = 20
+
 	
 	print('WEJSCIE DO FUNKCJI')
 	
 	font = cv2.FONT_HERSHEY_SIMPLEX
 
 	while(cap.isOpened()):
+	
+		i -= 1
 		# Capture frame-by-frame
 		ret, frame = cap.read()
 		# Our operations on the frame come here
@@ -88,17 +94,19 @@ def ReadQR():
 				   
 		# Display the resulting frame
 		cv2.imshow('frame',frame)
-		
+	
 		key = cv2.waitKey(1)
 		#if key & 0xFF == ord('q'):
 		
 		# Kiedy wszystko skończione, zatrzymaj przechwytywanie obrazu
 		#cap.release()
 		#cv2.destroyAllWindows()
+		#or i == 0
 			
-		if data != 0:			
+		if (data != 0 ):			
 			print('DATA:',data)
 			data =0
+			i = 5
 			break		
 	print('DATA:',data)
 
