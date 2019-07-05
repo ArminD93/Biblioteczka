@@ -13,14 +13,14 @@ def set_camera():
 	# Przechwycenie obrazu z kamerki
 	cap = cv2.VideoCapture(0, cv2.CAP_V4L)
 
-	#Rozdzielczośćo okna -> 640 x 480
+	#Rozdzielczosc okna -> 640 x 480
 	cap.set(3,640)
 	cap.set(4,480)
 	time.sleep(2)	
 	
 
 def decode(im) : 
-    # Poszukuj kodów kreskowych i kodów QR
+    # Poszukuj kodow kreskowych i kodow QR
     decodedObjects = pyzbar.decode(im)   
     return decodedObjects
 
@@ -37,19 +37,7 @@ def convex_hull():
         # Draw the convext hull
         for j in range(0,n):
           cv2.line(frame, hull[j], hull[ (j+1) % n], (255,0,0), 3)	
-  
-def compare_data(data1):
-        
-        if data1 == b'A':
-			print('Wykryto A')
-        elif data1 == b'B':
-			print('Wykryto B')
-        elif data1 == b'C':
-			print('Wykryto C')
-        elif data1 == b'D':
-			print('Wykryto D')
-        elif data1 == b'E':
-			print('Wykryto E')
+ 
 				
 def ReadQR():	
 	global points
@@ -59,8 +47,7 @@ def ReadQR():
 	data =0
 	i = 20
 
-	
-	print('WEJSCIE DO FUNKCJI')
+	print('URUCHOMIENIE KAMERKI')
 	
 	font = cv2.FONT_HERSHEY_SIMPLEX
 
@@ -82,31 +69,21 @@ def ReadQR():
 
 			x = decodedObject.rect.left
 			y = decodedObject.rect.top
-
-			
+		
 			data = decodedObject.data
 			return data	
-			 
-			compare_data(data)
 			
 			barCode = str(decodedObject.data)
 			cv2.putText(frame, barCode, (x, y), font, 1, (0,255,255), 2, cv2.LINE_AA)
 				   
 		# Display the resulting frame
 		cv2.imshow('frame',frame)
-	
-		key = cv2.waitKey(1)
-		#if key & 0xFF == ord('q'):
 		
-		# Kiedy wszystko skończione, zatrzymaj przechwytywanie obrazu
-		#cap.release()
-		#cv2.destroyAllWindows()
-		#or i == 0
-			
-		if (data != 0 ):			
-			print('DATA:',data)
-			data =0
-			i = 5
-			break		
-	print('DATA:',data)
+		key = cv2.waitKey(1)
+		#if key & 0xFF == ord('q'):	
 
+def Release_camera():
+		# Kiedy wszystko skonczione, zatrzymaj przechwytywanie obrazu
+		print('WYLACZENIE KAMERKI')
+		cap.release()
+		cv2.destroyAllWindows()	

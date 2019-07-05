@@ -211,7 +211,7 @@ class Library(GridLayout):
 			global FLG_4D
 			global toD
 			FLG_4D = True
-			toA = '4D'
+			toD = '4D'
 			print ("Ustawiono flagę 4D")
 				
 	def button4E(self, instance, val):

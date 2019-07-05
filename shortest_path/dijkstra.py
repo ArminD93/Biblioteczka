@@ -160,9 +160,9 @@ def Dijkstra(frm, to):
 					['3E', '4E', 23]]
     
         for pair in pairs:
-            #print (pair[0], pair[1], pair[2])
+            
             g.add_edge(pair[0], pair[1], pair[2])
-    
+        
 
         dijkstra(g, g.get_vertex(frm), g.get_vertex(to)) 
 
@@ -171,14 +171,19 @@ def Dijkstra(frm, to):
         global path
         
         path = [target.get_id()]
+        
         shortest(target, path)
     
         #print 'The shortest path : %s ' %(path[::-1])
        
         
         global listA
+        global wartosc
+		
+        #wartosc=[]
          
         listA = path[::-1]
+        #wartosc = wartosc.append(pair[2])
          
         return listA
     
