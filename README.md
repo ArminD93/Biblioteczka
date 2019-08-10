@@ -8,8 +8,10 @@ Za pomocą chwytaka pobierane są trzy dowolnie rozmieszczone drewniane klocki n
 
 Lista funkcji:
 
-1. Pobieranie i odkładanie klocków za pomocą chwytaka zamontowanego wózku z napędu DVD-ROM.
+1. Sterowanie urządzeniem za pomocą graficznego interfejsu użytkownika.
 
-2. Wprowadzaenie algorytmu Dijkstry, dzięki któremu można odnaleźć najkrótszą ścieżkę od punktu startowego do celu.
+2. Pobieranie i odkładanie klocków za pomocą chwytaka zamontowanego wózku z napędu DVD-ROM.
 
-3. Rozpoznawanie, czy dany obiekt znajduje się we właściwej kolumnie. Na klockach znajdują się kody QR, które rozpoznawane są przez kamerkę internetową umieszczoną nad chwytakiem.
+3. Wprowadzaenie algorytmu Dijkstry, dzięki któremu można odnaleźć najkrótszą ścieżkę od punktu startowego do celu.
+
+4. Rozpoznawanie, czy dany obiekt znajduje się we właściwej kolumnie. Na klockach znajdują się kody QR, które rozpoznawane są przez kamerkę internetową umieszczoną nad chwytakiem.
