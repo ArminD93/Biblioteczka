@@ -8,7 +8,10 @@ Za pomocą chwytaka pobierane są trzy dowolnie rozmieszczone drewniane klocki n
 
 Lista funkcji:
 
-1. Sterowanie urządzeniem za pomocą graficznego interfejsu użytkownika.
+1. Sterowanie urządzeniem za pomocą graficznego interfejsu użytkownika:
+  a) Wybór miejsc na graficznej klawiaturze, na którcyh umieszczone zostały klocki.
+  b) Wprowadzenie przycisku START uruchamiającego urządzenie.
+  c) Wyświetlanie informacji o wybranych pozycjach.
 
 2. Pobieranie i odkładanie klocków za pomocą chwytaka zamontowanego wózku z napędu DVD-ROM.
 
