@@ -15,6 +15,6 @@ Lista funkcji:
 
 2. Pobieranie i odkładanie klocków za pomocą chwytaka zamontowanego wózku z napędu DVD-ROM.
 
-3. Wprowadzaenie algorytmu Dijkstry, dzięki któremu można odnaleźć najkrótszą ścieżkę od punktu startowego do celu.
+3. Wprowadzenie algorytmu Dijkstry, dzięki któremu można odnaleźć najkrótszą ścieżkę od punktu startowego do celu.
 
 4. Rozpoznawanie, czy dany obiekt znajduje się we właściwej kolumnie. Na klockach znajdują się kody QR, które rozpoznawane są przez kamerkę internetową umieszczoną nad chwytakiem.
