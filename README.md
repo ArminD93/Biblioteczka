@@ -21,4 +21,6 @@ Lista funkcji:
 
 
 
-![alt text](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka1.jpg?raw=true) ![alt text](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka2.jpg?raw=true) 
+![alt text](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka1.jpg?raw=true){ width=50% }
+
+![alt text](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka2.jpg?raw=true){ width=50% } 
