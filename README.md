@@ -20,7 +20,7 @@ Lista funkcji:
 4. Rozpoznawanie, czy dany obiekt znajduje się we właściwej kolumnie. Na klockach znajdują się kody QR, które rozpoznawane są przez kamerkę internetową umieszczoną nad chwytakiem.
 
 Przód urządzenia | Lewa strona urządzenia
-:................|:......................:
+:................:|:......................:
 ![alt text](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka2.jpg?raw=true)|![alt text](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka1.jpg?raw=true)
 
 
