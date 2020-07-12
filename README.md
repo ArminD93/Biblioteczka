@@ -21,7 +21,7 @@ Lista funkcji:
 
 |Przód urządzenia | Lewa strona urządzenia|
 |-----------------|-----------------------|
-|![alt text](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka2.jpg?raw=true) | ![alt text1](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka1.jpg?raw=true)|
+|![alt text1](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka2.jpg?raw=true) | ![alt text2](https://github.com/ArminD93/Biblioteczka/blob/dev/images/biblioteczka1.jpg?raw=true)|
 
 
 
