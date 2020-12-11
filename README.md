@@ -1,6 +1,6 @@
 # Biblioteczka
 
-Projekt zautomatyzowanego systemu wyboru drewanianych klocków z regału.
+Projekt zautomatyzowanego systemu wyboru drewanianych klocków z regału
 
 Urządzenie zbudowano z wykorzystaniem elementów z drukarki 3D (stelaż, silniki krokowe).
 
